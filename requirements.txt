@@ -1,3 +1,6 @@
 requests~=2.28.1
 aiohttp~=3.8.3
 httpx~=0.23.0
+SQLAlchemy~=1.4.3
+aiosqlite~=0.17.0
+asyncpg~=0.26.0
