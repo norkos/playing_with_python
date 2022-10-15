@@ -12,7 +12,7 @@ if platform.system() == 'Windows':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
-def get_the_content(url: str) -> list[tuple[str, int, str]]:
+def get_the_content(url: str) -> list[tuple[str, int]]:
     r = httpx.get(url)
     results = []
     for record in r.json()['data']['children']:
