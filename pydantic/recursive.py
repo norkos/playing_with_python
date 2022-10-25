@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-
+from rich import print
+from devtools import debug
 
 class MusicBand(BaseModel):
     name: str
@@ -15,7 +16,7 @@ class Album(BaseModel):
     songs: list[Song]
 
 
-def test_metallica():
+def t2est_metallica():
     data = {
         'band': {
             'name': 'Metallica',
@@ -44,3 +45,5 @@ def test_metallica():
     assert 320 == album.songs[0].how_long
     assert 'And justice for all' == album.songs[1].title
     assert album_from_dict == album
+    print(album)
+    debug(album)
