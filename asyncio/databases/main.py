@@ -3,7 +3,6 @@ from databases import Database
 import platform
 import asyncio
 from sqlalchemy import create_engine
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 
 
 if platform.system() == 'Windows':
@@ -33,6 +32,7 @@ async def process():
     values = {'text': 'my_simple_tweet'}
     await database.execute(query=query, values=values)
     await database.execute(query=query, values=values)
+
     await database.disconnect()
 
 if __name__ == "__main__":
